@@ -1,28 +1,28 @@
-require 'nokogiri'
 require 'kimurai'
 require 'capybara'
 require 'httparty'
 require 'clipboard'
-require 'webdrivers/chromedriver'
 
-class SkribblScraper < Kimurai::Base
+
+class BigScraper < Kimurai::Base
   @name = 'skribbl_scraper'
   @start_urls = ["https://skribbl.io/"]
   @engine = :selenium_chrome
 
-  # def scrape_page
-  #   doc = browser.current_response
-  #
-  # end
+
 
   def parse(response, url:, data: {})
-    browser.find('/html/body/div[3]/div[2]/div[2]/div[1]/form/button[2]').click
-    puts "Created private game..."
+    browser.execute_script("window.scrollBy(0,10000)")
+    browser.find('//*[@id="buttonLoginCreatePrivate"]').click
+    puts "Created private game..." ; sleep 4
 
-   browser.find('/html/body/div[3]/div[5]/div[3]/div[2]/button').click
-    $link = Clipboard.paste
+    browser.execute_script("window.scrollBy(0,10000)")
+    doc = browser.current_response
+    #linkvalue = doc
+    linkvalue = browser.find('//*[@id="screenLobby"]/div[3]/div[2]/div').hover
+    puts linkvalue
   end
 end
 
-skriblink = SkribblScraper.parse!(:parse, url: "https://skribbl.io/")
-pp skriblink
+skribbllink = BigScraper.crawl!
+
