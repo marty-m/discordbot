@@ -4,7 +4,7 @@ require 'capybara'
 require 'httparty'
 require 'clipboard'
 
-bot = Discordrb::Bot.new token: 'NzY3NDA3MzgzODkwNjI0NTEz.X4xd0g.SdSzuqlv8bDPo-zrzE8evAlbqPs'
+bot = Discordrb::Bot.new token: '<your token here>'
 
 
 bot.message(content: '.skribbl') do |event|
