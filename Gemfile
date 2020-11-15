@@ -7,3 +7,4 @@ gem 'httparty'
 gem 'pry'
 gem 'clipboard'
 gem "ffi", :platforms => [:mswin, :mingw]
+gem 'poltergeist'

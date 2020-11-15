@@ -5,7 +5,7 @@ bot = Discordrb::Bot.new token: 'NzY3NDA3MzgzODkwNjI0NTEz.X4xd0g.SdSzuqlv8bDPo-z
 
 bot.message(content: '.skribbl') do |event|
 
-  m = event.respond('')
+  m = event.respond("#{$link}")
 
 end
 

@@ -159,6 +159,7 @@ DEPENDENCIES
   httparty
   kimurai
   nokogiri
+  poltergeist
   pry
 
 BUNDLED WITH
